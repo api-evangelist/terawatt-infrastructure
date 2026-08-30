@@ -1,0 +1,79 @@
+generated: '2026-08-30'
+method: searched
+source: https://www.terawattinfrastructure.com/blog/how-terawatts-full-stack-platform-delivers-reliable-ev-av-fleet-charging
+name: Terawatt Infrastructure standards conformance
+note: >-
+  Terawatt publishes no OpenAPI, AsyncAPI, GraphQL SDL or any other
+  machine-readable contract, so nothing here is derived from a spec. The single
+  substantive finding is a DOMAIN-STANDARD CLAIM made by the company in its own
+  words: Terawatt states it has "implemented Open Charge Point Interface (OCPI)
+  with custom extensions, which gives our customers visibility into our charging
+  facility and enables smooth fleet operations." That is a prose claim on a
+  marketing/engineering blog post, not a contract declaration, and the pipeline
+  scores domain-standard conformance from the contract. No OCPI version-discovery
+  endpoint is reachable anonymously (see evidence), so the claim could not be
+  verified and every entry below is recorded conforms:false. This is an honest
+  unverified, not a denial that Terawatt speaks OCPI.
+standards:
+- id: ocpi
+  name: Open Charge Point Interface (OCPI)
+  domain: EV charging roaming / e-mobility
+  conforms: false
+  claimed: true
+  claim_source: https://www.terawattinfrastructure.com/blog/how-terawatts-full-stack-platform-delivers-reliable-ev-av-fleet-charging
+  claim_quote: >-
+    "We have implemented Open Charge Point Interface (OCPI) with custom
+    extensions, which gives our customers visibility into our charging facility
+    and enables smooth fleet operations."
+  evidence:
+  - url: https://www.terawattinfrastructure.com/ocpi/versions
+    status: 404
+    note: OCPI version-discovery endpoint; standard entry point for an OCPI party.
+  - url: https://www.terawattinfrastructure.com/ocpi/cpo/versions
+    status: 404
+  - url: https://www.terawattinfrastructure.com/ocpi/2.2/versions
+    status: 404
+  - url: https://api.terawattinfrastructure.com
+    status: NXDOMAIN
+    note: No API host exists in DNS, so no OCPI base URL could be located.
+  verdict: >-
+    Self-declared, unverifiable from the public surface. The company also says the
+    implementation carries "custom extensions", which by definition means an
+    integrator cannot rely on stock OCPI semantics alone — and there is no
+    published document describing the extensions.
+  remedy: >-
+    Publish the OCPI version-discovery URL, the supported OCPI version(s), the
+    modules Terawatt implements, and a document describing the custom extensions.
+    An OCPI party that cannot be discovered anonymously has to be onboarded by
+    email.
+- id: ocpp
+  name: Open Charge Point Protocol (OCPP)
+  domain: Charger-to-CMS communication
+  conforms: false
+  claimed: false
+  evidence:
+  - url: https://www.terawattinfrastructure.com/solutions
+    status: 200
+    note: >-
+      Terawatt markets "proprietary Charge Management Software"; OCPP is the
+      standard protocol between chargers and a CMS, but the company makes no
+      public OCPP claim and no OCPP surface is customer-facing anyway.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence:
+  - url: https://www.terawattinfrastructure.com/.well-known/oauth-authorization-server
+    status: 404
+- id: openid-connect
+  name: OpenID Connect
+  conforms: false
+  evidence:
+  - url: https://www.terawattinfrastructure.com/.well-known/openid-configuration
+    status: 404
+- id: rfc9457
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence:
+  - url: https://www.terawattinfrastructure.com/openapi.json
+    status: 404
+    note: No contract published, so no error envelope to assess.

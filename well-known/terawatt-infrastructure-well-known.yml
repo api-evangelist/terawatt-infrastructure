@@ -1,0 +1,34 @@
+generated: '2026-08-30'
+method: probed
+source: >-
+  Direct HTTP probes of the /.well-known/ namespace on every host Terawatt
+  Infrastructure is known to serve. Terawatt operates a single public web
+  property (www.terawattinfrastructure.com, Webflow-hosted); DNS enumeration of
+  api/app/developer/developers/docs/portal/my/dashboard/charge/ocpi
+  .terawattinfrastructure.com returned NXDOMAIN for every candidate, so there is
+  no second host to probe.
+name: Terawatt Infrastructure well-known probe
+note: >-
+  Every probed path returned 404. Terawatt serves no .well-known documents of any
+  kind — no security.txt, no api-catalog, no OAuth/OIDC metadata, no agent card,
+  no ai-plugin manifest. The 404 bodies are the site's standard Webflow HTML
+  error page, not documents. This file records a verified absence; per the
+  pipeline contract NO WellKnown or SecurityTxt pointer is emitted in apis.yml,
+  because there is nothing served to point at.
+hosts:
+- host: www.terawattinfrastructure.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

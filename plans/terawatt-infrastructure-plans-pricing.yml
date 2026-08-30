@@ -1,0 +1,30 @@
+generated: '2026-08-30'
+method: searched
+source: https://www.terawattinfrastructure.com/contact
+name: Terawatt Infrastructure plans and pricing
+plan_count: 0
+note: >-
+  Terawatt publishes no pricing page and no plan tiers. Its full 90-URL sitemap
+  contains no /pricing, /plans, /rates or equivalent path, and the commercial
+  motion is a contact form ("Get in touch" / fleet consultation) leading to a
+  negotiated charging-as-a-service agreement or a long-term site contract. The
+  company's own blog describes per-kWh billing tied to charge-session data and
+  time-of-use energy strategy, but publishes no rate card, so no numbers are
+  recorded here. This is a genuine zero, not an unchecked field.
+pricing_model: contact-sales
+billing_signals:
+- signal: per-kWh billing
+  source: https://www.terawattinfrastructure.com/blog/how-terawatts-full-stack-platform-delivers-reliable-ev-av-fleet-charging
+  note: >-
+    Company states it provides "charge session data to customers along with
+    relevant per kWh billing". No rate is published.
+- signal: charging-as-a-service
+  source: https://www.terawattinfrastructure.com/blog/what-is-charging-as-a-service-caas-and-how-can-it-add-value-to-your-growing-ev-fleet
+  note: CaaS explained as a commercial model; no prices given.
+evidence:
+- url: https://www.terawattinfrastructure.com/sitemap.xml
+  status: 200
+  note: 90 URLs, none of them a pricing or plans page.
+- url: https://www.terawattinfrastructure.com/contact
+  status: 200
+plans: []
