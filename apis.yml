@@ -10,6 +10,18 @@ description: 'Terawatt Infrastructure is a US infrastructure company that acquir
   that it has implemented the Open Charge Point Interface (OCPI) with custom extensions so fleet
   customers get visibility into its charging facilities, but it publishes no public developer portal,
   API reference, or machine-readable contract for that surface.'
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://cdn.prod.website-files.com/659d87f22f67fd9bbaac94a7/68b990218fbb9220fa26b901_Frame%201.png
 url: https://raw.githubusercontent.com/api-evangelist/terawatt-infrastructure/refs/heads/main/apis.yml
 x-type: company
